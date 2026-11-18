@@ -1,9 +1,8 @@
 # CIMA Note 40
 
-Referencias de la nota. Este archivo se genera automáticamente desde
-`references.bib` — no lo edites directamente, edita `README.in.md`.
+Referencias de CIMA Note de TVET - Suriname
 
-## Bibliografía
+## References
 
 <div id="refs" class="references csl-bib-body hanging-indent"
 entry-spacing="0" line-spacing="2">
