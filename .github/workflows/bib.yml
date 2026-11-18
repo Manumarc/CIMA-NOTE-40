@@ -1,7 +1,7 @@
 name: Render bibliografía
 on:
   push:
-    paths: ['references.bib', 'README.in.md', 'apa.csl']
+    paths: ['references.bib', 'README.in.md', 'apa.csl', 'style.css', '.github/workflows/bib.yml']
   workflow_dispatch:
 
 jobs:
@@ -12,10 +12,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: r-lib/actions/setup-pandoc@v2
-      - run: pandoc README.in.md --citeproc -t gfm -o README.md
-      - run: |
+
+      - name: Renderizar
+        run: |
+          pandoc README.in.md --citeproc -t gfm -o README.md
+          mkdir -p _site
+          pandoc README.in.md --citeproc --standalone \
+            --metadata pagetitle="CIMA Note 40 — References" \
+            --css style.css -o _site/index.html
+          cp style.css _site/
+
+      - name: Commitear resultado
+        run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add README.md
+          git add README.md _site
           git diff --staged --quiet || git commit -m "Actualizar bibliografía (APA)"
           git push
