@@ -1,9 +1,8 @@
-# CIMA Note 40
+# CIMA Note 40: How to Leverage the Potential of Technical and Vocational Education and Training (TVET) in Suriname
 
-Referencias de la nota. Este archivo se genera automáticamente desde
-`references.bib` — no lo edites directamente, edita `README.in.md`.
+References cited in this note
 
-## Bibliografía
+## References
 
 <div id="refs" class="references csl-bib-body hanging-indent"
 entry-spacing="0" line-spacing="2">
